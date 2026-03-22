@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Меню — Café Lumière</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="menu-page">
+
+  <header class="header" id="header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 26 C12 18 28 18 28 26" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <ellipse cx="20" cy="14" rx="5" ry="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M28 20 C32 18 34 22 30 24" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+        Café Lumière
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">← Главная</a>
+        <a href="index.html#menu">Краткое меню</a>
+        <a href="index.html#about">О нас</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <button class="reserve-btn" onclick="openPopup()">
+        <i class="fa-regular fa-calendar"></i> Бронь
+      </button>
+      <button class="burger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MENU HERO -->
+  <section class="menu-hero">
+    <div class="menu-hero-content fade-in-up">
+      <span class="section-label">Café Lumière</span>
+      <h1>Полное меню</h1>
+      <p>Всё, что мы готовим с душой</p>
+    </div>
+  </section>
+
+  <!-- FULL MENU TABLE SECTION -->
+  <section class="full-menu-section">
+    <div class="full-menu-container">
+
+      <div class="menu-category-block">
+        <h2 class="cat-title"><i class="fa-solid fa-mug-hot"></i> Кофе</h2>
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Напиток</th>
+              <th>Описание</th>
+              <th>Объём</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Эспрессо</strong></td>
+              <td>Двойная экстракция, бархатная текстура</td>
+              <td>30 мл</td>
+              <td>120 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Американо</strong></td>
+              <td>Эспрессо + горячая вода</td>
+              <td>200 мл</td>
+              <td>150 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Капучино</strong></td>
+              <td>Эспрессо, молоко, бархатная пена</td>
+              <td>200 мл</td>
+              <td>185 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Флэт Уайт</strong></td>
+              <td>Ристретто с молочной пенкой</td>
+              <td>160 мл</td>
+              <td>195 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Латте</strong></td>
+              <td>Эспрессо, взбитое молоко, пена</td>
+              <td>300 мл</td>
+              <td>210 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Раф кофе</strong></td>
+              <td>Эспрессо, сливки, ваниль</td>
+              <td>200 мл</td>
+              <td>230 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Колд Брю</strong></td>
+              <td>12-часовое холодное заваривание</td>
+              <td>300 мл</td>
+              <td>250 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Матча Латте</strong></td>
+              <td>Японский матча, овсяное молоко</td>
+              <td>250 мл</td>
+              <td>270 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="menu-category-block">
+        <h2 class="cat-title"><i class="fa-solid fa-bread-slice"></i> Завтраки</h2>
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Блюдо</th>
+              <th>Состав</th>
+              <th>Вес</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Яйца Бенедикт</strong></td>
+              <td>Соус голландез, лосось, бриошь</td>
+              <td>320 г</td>
+              <td>490 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Авокадо тост</strong></td>
+              <td>Гуакамоле, черри, микрозелень, пашот</td>
+              <td>280 г</td>
+              <td>380 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Гранола</strong></td>
+              <td>Домашняя гранола, сезонные ягоды, йогурт</td>
+              <td>250 г</td>
+              <td>320 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Омлет Люмьер</strong></td>
+              <td>3 яйца, трюфельное масло, пармезан</td>
+              <td>300 г</td>
+              <td>410 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Французские тосты</strong></td>
+              <td>Бриошь, кленовый сироп, взбитые сливки</td>
+              <td>290 г</td>
+              <td>350 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="menu-category-block">
+        <h2 class="cat-title"><i class="fa-solid fa-bowl-food"></i> Основные блюда</h2>
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Блюдо</th>
+              <th>Состав</th>
+              <th>Вес</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Крем-суп из тыквы</strong></td>
+              <td>Тыква, имбирь, кокосовое молоко, семечки</td>
+              <td>350 мл</td>
+              <td>320 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Паста Карбонара</strong></td>
+              <td>Спагетти, гуанчале, пармезан, желток</td>
+              <td>320 г</td>
+              <td>520 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Боул с лососем</strong></td>
+              <td>Рис, лосось, авокадо, огурец, соус унаги</td>
+              <td>400 г</td>
+              <td>580 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Ризотто грибное</strong></td>
+              <td>Арборио, белые грибы, пармезан, трюфель</td>
+              <td>350 г</td>
+              <td>560 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Салат Люмьер</strong></td>
+              <td>Руккола, груша, грецкий орех, горгонзола</td>
+              <td>280 г</td>
+              <td>390 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="menu-category-block">
+        <h2 class="cat-title"><i class="fa-solid fa-cake-candles"></i> Десерты</h2>
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Десерт</th>
+              <th>Описание</th>
+              <th>Вес</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Тарт Татен</strong></td>
+              <td>Карамельные яблоки, слоёное тесто</td>
+              <td>180 г</td>
+              <td>290 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Шоколадный фондан</strong></td>
+              <td>Горький шоколад 72%, ванильный крем</td>
+              <td>160 г</td>
+              <td>340 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Наполеон авторский</strong></td>
+              <td>Слоёное тесто, крем патисьер</td>
+              <td>200 г</td>
+              <td>310 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Тирамису</strong></td>
+              <td>Маскарпоне, савоярди, эспрессо</td>
+              <td>180 г</td>
+              <td>320 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Чизкейк NYC</strong></td>
+              <td>Сливочный сыр, ягодный соус</td>
+              <td>170 г</td>
+              <td>330 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="menu-category-block">
+        <h2 class="cat-title"><i class="fa-solid fa-glass-water"></i> Безалкогольные напитки</h2>
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th>Напиток</th>
+              <th>Описание</th>
+              <th>Объём</th>
+              <th>Цена</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Лимонад Люмьер</strong></td>
+              <td>Лимон, базилик, мята, газ. вода</td>
+              <td>400 мл</td>
+              <td>220 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Имбирный Эйл</strong></td>
+              <td>Имбирь, лайм, мёд</td>
+              <td>350 мл</td>
+              <td>200 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Облепиховый чай</strong></td>
+              <td>Облепиха, мед, имбирь</td>
+              <td>400 мл</td>
+              <td>190 ₽</td>
+            </tr>
+            <tr>
+              <td><strong>Свежевыжатый сок</strong></td>
+              <td>На выбор: апельсин, яблоко, грейпфрут</td>
+              <td>300 мл</td>
+              <td>230 ₽</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="menu-page-cta">
+      <button class="btn-primary" onclick="openPopup()">
+        <i class="fa-regular fa-calendar"></i> Забронировать стол
+      </button>
+      <a href="index.html" class="btn-outline">← На главную</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Café Lumière</div>
+        <p>Кофе, еда и атмосфера</p>
+      </div>
+      <div class="footer-links">
+        <h4>Навигация</h4>
+        <a href="index.html">Главная</a>
+        <a href="index.html#about">О нас</a>
+        <a href="index.html#contact">Контакты</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Café Lumière</span>
+    </div>
+  </footer>
+
+  <!-- POPUP -->
+  <div class="popup-overlay" id="popupOverlay" onclick="closePopupOutside(event)">
+    <div class="popup" id="popup">
+      <button class="popup-close" onclick="closePopup()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="popup-header">
+        <h3>Забронировать стол</h3>
+        <p>Заполните форму — мы перезвоним</p>
+      </div>
+      <form class="booking-form" onsubmit="handleBooking(event)">
+        <div class="form-group">
+          <label>Имя</label>
+          <input type="text" placeholder="Ваше имя" required/>
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Дата</label>
+            <input type="date" required/>
+          </div>
+          <div class="form-group">
+            <label>Время</label>
+            <input type="time" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Количество гостей</label>
+          <input type="number" min="1" max="20" placeholder="2" required/>
+        </div>
+        <div class="form-group">
+          <label>Пожелания</label>
+          <textarea placeholder="Особые пожелания, аллергии, повод..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Подтвердить бронь</button>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Ваша заявка принята! Мы свяжемся с вами.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

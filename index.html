@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Lumière</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="header" id="header">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 26 C12 18 28 18 28 26" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <ellipse cx="20" cy="14" rx="5" ry="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M28 20 C32 18 34 22 30 24" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+        Café Lumière
+      </a>
+      <nav class="nav-links">
+        <a href="#home">Главная</a>
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#gallery">Атмосфера</a>
+        <a href="menu.html">Полное меню</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <button class="reserve-btn" onclick="openPopup()">
+        <i class="fa-regular fa-calendar"></i> Бронь
+      </button>
+      <button class="burger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" onclick="toggleMenu()">Главная</a>
+      <a href="#menu" onclick="toggleMenu()">Меню</a>
+      <a href="#about" onclick="toggleMenu()">О нас</a>
+      <a href="menu.html" onclick="toggleMenu()">Полное меню</a>
+      <a href="#contact" onclick="toggleMenu()">Контакты</a>
+      <button onclick="openPopup(); toggleMenu()">Забронировать стол</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline fade-in-up delay-1">Место, где время замедляется</p>
+      <h1 class="hero-title fade-in-up delay-2">Café<br/><em>Lumière</em></h1>
+      <p class="hero-desc fade-in-up delay-3">Авторская кухня · Свежеобжаренный кофе · Живая атмосфера</p>
+      <div class="hero-actions fade-in-up delay-4">
+        <a href="#menu" class="btn-primary">Смотреть меню</a>
+        <button class="btn-outline" onclick="openPopup()">Забронировать</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Прокрутить</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS BAR -->
+  <div class="highlights">
+    <div class="highlight-item">
+      <i class="fa-solid fa-mug-hot"></i>
+      <div>
+        <strong>17 сортов кофе</strong>
+        <span>от фермеров мира</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <i class="fa-solid fa-leaf"></i>
+      <div>
+        <strong>Сезонные блюда</strong>
+        <span>меняются каждый месяц</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <i class="fa-solid fa-clock"></i>
+      <div>
+        <strong>Пн – Вс</strong>
+        <span>8:00 — 23:00</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <i class="fa-solid fa-wifi"></i>
+      <div>
+        <strong>Бесплатный Wi-Fi</strong>
+        <span>для гостей кафе</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU SECTION -->
+  <section class="menu-section" id="menu">
+    <div class="section-header">
+      <span class="section-label">Наше меню</span>
+      <h2>Что мы предлагаем</h2>
+      <p>Каждое блюдо — история. Каждая чашка — момент.</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab active" data-tab="coffee">☕ Кофе</button>
+      <button class="tab" data-tab="food">🍽 Еда</button>
+      <button class="tab" data-tab="desserts">🍰 Десерты</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Coffee items -->
+      <div class="menu-card" data-cat="coffee">
+        <div class="menu-card-img coffee-1"></div>
+        <div class="menu-card-body">
+          <h3>Фирменный Эспрессо</h3>
+          <p>Двойная экстракция, бархатная текстура</p>
+          <span class="price">120 ₽</span>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="coffee">
+        <div class="menu-card-img coffee-2"></div>
+        <div class="menu-card-body">
+          <h3>Флэт Уайт</h3>
+          <p>Ристретто с молочной пенкой</p>
+          <span class="price">195 ₽</span>
+        </div>
+      </div>
+      <div class="menu-card" data-cat="coffee">
+        <div class="menu-card-img coffee-3"></div>
+        <div class="menu-card-body">
+          <h3>Колд Брю</h3>
+          <p>12-часовое холодное заваривание</p>
+          <span class="price">250 ₽</span>
+        </div>
+      </div>
+      <!-- Food -->
+      <div class="menu-card hidden" data-cat="food">
+        <div class="menu-card-img food-1"></div>
+        <div class="menu-card-body">
+          <h3>Яйца Бенедикт</h3>
+          <p>Соус голландез, лосось, бриошь</p>
+          <span class="price">490 ₽</span>
+        </div>
+      </div>
+      <div class="menu-card hidden" data-cat="food">
+        <div class="menu-card-img food-2"></div>
+        <div class="menu-card-body">
+          <h3>Авокадо тост</h3>
+          <p>Гуакамоле, черри, микрозелень</p>
+          <span class="price">380 ₽</span>
+        </div>
+      </div>
+      <div class="menu-card hidden" data-cat="food">
+        <div class="menu-card-img food-3"></div>
+        <div class="menu-card-body">
+          <h3>Крем-суп из тыквы</h3>
+          <p>Тыква, имбирь, кокосовое молоко</p>
+          <span class="price">320 ₽</span>
+        </div>
+      </div>
+      <!-- Desserts -->
+      <div class="menu-card hidden" data-cat="desserts">
+        <div class="menu-card-img des-1"></div>
+        <div class="menu-card-body">
+          <h3>Тарт Татен</h3>
+          <p>Карамельные яблоки, слоёное тесто
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH2-qByJXCbkWF2-cPxMXUmvbuDAGBA53jPQzRXuW9w7kb0Q7wKhrHB3qzfVpH8q_ai_K66k73VrDaKdPBDsuMdnQ3JLG0fy3iCGnULbcu&s=10"" alt="karemel" class="inline-img"/>
+          </p>
+          <span class="price">290 ₽</span>
+        </div>
+      </div>
+      <div class="menu-card hidden" data-cat="desserts">
+        <div class="menu-card-img des-2"></div>
+        <div class="menu-card-body">
+          <h3>Шоколадный фондан
+           <img src="data:image/jpeg;base64,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" alt="krem-fondan" class="inline-img"/>
+          </h3>
+          <p>Горький шоколад 72%, ванильный крем</p>
+          <span class="price">340 ₽</span>
+        </div>
+      </div>
+      <div class="menu-card hidden" data-cat="desserts">
+        <div class="menu-card-img des-3"></div>
+        <div class="menu-card-body">
+          <h3>Наполеон<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvURPwSXjW5meqTIlMkufyHh6ApEFzl86wQHlB5CUVUzzWwk4AWWgjMRPO06zrVTGd43ofQx1S5bZ8d0vhlTO2xOaiggqLefOTK4n_cRKdew&s=10" alt="">
+             </h3>
+
+          <p>Домашнее слоёное тесто, крем патисьер</p>
+          <span class="price">310 ₽</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-cta">
+      <a href="menu.html" class="btn-primary">Полное меню →</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-img-col">
+      <div class="about-img-frame">
+        <div class="about-img-main"></div>
+        <div class="about-img-accent"></div>
+      </div>
+    </div>
+    <div class="about-text-col">
+      <span class="section-label">Наша история</span>
+      <h2>Кофе как<br/><em>искусство</em></h2>
+      <p>Café Lumière открылось в 2018 году с одной идеей: создать пространство, где каждая деталь имеет значение — от выбора зерна до фарфора, в котором подаётся напиток.</p>
+      <p>Наши бариста проходят обучение в Скандинавии. Шеф-повар — выпускник кулинарной академии Cordon Bleu. Мы верим, что лучший кофе — это тот, за которым хочется вернуться.</p>
+      <div class="about-stats">
+        <div class="stat"><strong>6+</strong><span>лет работы</span></div>
+        <div class="stat"><strong>40к+</strong><span>довольных гостей</span></div>
+        <div class="stat"><strong>17</strong><span>сортов кофе</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO / ATMOSPHERE -->
+  <section class="atmosphere-section" id="gallery">
+    <div class="section-header light">
+      <span class="section-label">Атмосфера</span>
+      <h2>Почувствуйте<br/>наш дух</h2>
+    </div>
+    <div class="atmo-grid">
+      <div class="atmo-card atmo-1">
+        <div class="atmo-overlay">
+          <h3>Утренний ритуал</h3>
+          <p>Каждое утро начинается с нас</p>
+        </div>
+      </div>
+      <div class="atmo-card atmo-2">
+        <div class="atmo-overlay">
+          <h3>Тёплое пространство</h3>
+          <p>150 кв.м уюта в центре города</p>
+        </div>
+      </div>
+      <div class="atmo-card atmo-3">
+        <div class="atmo-overlay">
+          <h3>Живая музыка</h3>
+          <p>По пятницам и субботам</p>
+        </div>
+      </div>
+      <div class="atmo-video">
+        <iframe width="560" height="315"
+         src="https://www.youtube.com/embed/ezPQyB6iXg0?si=COhLELdY6GSk0F3_" 
+         title="YouTube video player" frameborder="0" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIAL OFFER / FILTER SECTION -->
+  <section class="offer-section">
+    <div class="offer-bg">
+      <div class="offer-content">
+        <span class="section-label">Специальное предложение</span>
+        <h2>Завтрак на двоих</h2>
+        <p>Два кофе + два блюда + десерт<br/>всего за <strong>990 ₽</strong> до 12:00</p>
+        <button class="btn-primary" onclick="openPopup()">Забронировать</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section" id="contact">
+    <div class="section-header">
+      <span class="section-label">Где мы</span>
+      <h2>Найти нас</h2>
+      <p>ул. Кофейная, 12 · Москва · м. Чистые Пруды</p>
+    </div>
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.2!2d37.6392!3d55.7606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzM4LjIiTiAzN8KwMzgnMjEuMSJF!5e0!3m2!1sru!2sru!4v1234567890"
+        width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="Карта">
+      </iframe>
+    </div>
+    <div class="contact-bar">
+      <a href="tel:+74951234567"><i class="fa-solid fa-phone"></i> +7 (495) 123-45-67</a>
+      <a href="mailto:hello@cafelumiere.ru"><i class="fa-solid fa-envelope"></i> hello@cafelumiere.ru</a>
+      <a href="#"><i class="fa-brands fa-instagram"></i> @cafelumiere</a>
+      <a href="#"><i class="fa-brands fa-telegram"></i> t.me/cafelumiere</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Café Lumière</div>
+        <p>Кофе, еда и атмосфера<br/>которые остаются в памяти</p>
+      </div>
+      <div class="footer-links">
+        <h4>Навигация</h4>
+        <a href="#home">Главная</a>
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="menu.html">Полное меню</a>
+        <a href="#contact">Контакты</a>
+      </div>
+      <div class="footer-links">
+        <h4>Соцсети</h4>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fa-brands fa-vk"></i> VKontakte</a>
+        <a href="#"><i class="fa-brands fa-telegram"></i> Telegram</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Рассылка</h4>
+        <p>Акции, новинки и события</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Ваш e-mail" required/>
+          <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Café Lumière. Все права защищены.</span>
+      <span>Сделано с ♥ в Москве</span>
+    </div>
+  </footer>
+
+  <!-- POPUP (MODAL) -->
+  <div class="popup-overlay" id="popupOverlay" onclick="closePopupOutside(event)">
+    <div class="popup" id="popup">
+      <button class="popup-close" onclick="closePopup()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="popup-header">
+        <h3>Забронировать стол</h3>
+        <p>Заполните форму — мы перезвоним</p>
+      </div>
+      <form class="booking-form" onsubmit="handleBooking(event)">
+        <div class="form-group">
+          <label>Имя</label>
+          <input type="text" placeholder="Ваше имя" required/>
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" placeholder="+7 (___) ___-__-__" required/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Дата</label>
+            <input type="date" required/>
+          </div>
+          <div class="form-group">
+            <label>Время</label>
+            <input type="time" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Количество гостей</label>
+          <input type="number" min="1" max="20" placeholder="2" required/>
+        </div>
+        <div class="form-group">
+          <label>Пожелания</label>
+          <textarea placeholder="Особые пожелания, аллергии, повод..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Подтвердить бронь</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SUCCESS TOAST -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>Ваша заявка принята! Мы свяжемся с вами.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
